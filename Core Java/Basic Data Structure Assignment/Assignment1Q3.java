@@ -6,7 +6,7 @@ class SiCi {
     	return amount;
     }
     public double compoundInterest(double principalAmount,int time,double interestRate){
-    	double amount = (principalAmount * Math.pow(1 + (interestRate),time))-principalAmount;
+    	double amount = principalAmount * (Math.pow((1 + interestRate/100), (time))) - principalAmount;
     	return amount;
     }
 }
