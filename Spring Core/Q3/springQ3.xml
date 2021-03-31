@@ -4,43 +4,20 @@
 
 <beans>
     <bean id="bankAccount1" class="com.capgemini.springAssignment.Q3.BankAccount">
-        <constructor-arg type = "long" value="1171"/>
-        <constructor-arg value="neeraj"/>
-        <constructor-arg value="Saving"/>
-        <constructor-arg type="double" value="15000"/>
+        <constructor-arg type = "long" value="5697"/>
+        <constructor-arg value="Vivek"/>
+        <constructor-arg value="Economic"/>
+        <constructor-arg type="double" value="56000"/>
 
     </bean>
     <bean id="bankAccount2" class="com.capgemini.springAssignment.Q3.BankAccount">
-        <constructor-arg type = "long" value="1172"/>
-        <constructor-arg value="Ramesh"/>
-        <constructor-arg value="Current"/>
-        <constructor-arg type="double" value="20000"/>
+        <constructor-arg type = "long" value="3654"/>
+        <constructor-arg value="Kumar"/>
+        <constructor-arg value="Savings"/>
+        <constructor-arg type="double" value="654230"/>
 
     </bean>
-    <!--                      without autowiring
-    <bean id="BankRepo" class="com.capgemini.springAssignment.Q3.BankAccountepositoryImpl">
-        <property name="bankAccount">
-            <list>
-                <ref bean="BankAccount1"/>
-                <ref bean="BankAccount2"/>
-            </list>
-        </property>
-    </bean>
--->
-
-    <!--                                  autowiring by Name
-    <bean id="BankRepo" class="com.capgemini.springAssignment.Q3.BankAccountepositoryImpl" autowire="byName">
-
-    </bean>
-    -->
-
-    <!--                           autowiring by type   ( it will work if we have only one type )
-
-    <bean id="BankRepo" class="com.capgemini.springAssignment.Q3.BankAccountepositoryImpl" autowire="byType"/>
-
-    -->
-
-    <!--                                  autowiring by constructor          -->
+   
    <bean id="BankRepo" class="com.capgemini.springAssignment.Q3.BankAccountepositoryImpl" autowire="constructor">
 
    </bean>

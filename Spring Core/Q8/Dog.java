@@ -18,38 +18,37 @@ public class Dog implements InitializingBean,DisposableBean  {
     }
 
     public void eat(){
-        System.out.println(getName()+" is eating.");
+        System.out.println(getName());
     }
 
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("Initializing the dog bean");
+        System.out.println("Initializing bean");
     }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("Destroy method is called");
+        System.out.println("Destroy");
     }
 
     // Called using init-method and destroy-method
     public void myInit(){
-        System.out.println("Dog bean created using init-method");
+        System.out.println("Dog bean created");
     }
 
     public  void  myDest(){
-        System.out.println("Object is destroyed using destroy-method");
+        System.out.println("destroy-method");
     }
 
-    // uses of annontation which performs the same operations as above two methods i.e
-    // implementing methods or configuring XML file.
+    
     @PostConstruct
     public void postConstruct(){
-        System.out.println("using annontation init called");
+        System.out.println("init called");
     }
 
     @PreDestroy
     public  void  preDestroy(){
-        System.out.println("destroy called using preDestroy annotation");
+        System.out.println("destroy called");
     }
 }

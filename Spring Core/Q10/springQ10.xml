@@ -5,16 +5,16 @@
 
 <beans>
     <bean id="contextAware" class="com.capgemini.springAssignment.Q10.ContextAwareExample">
-        <property name="place" value="Delhi"/>
+        <property name="place" value="HYD"/>
         <property name="demo" ref="Demo"/>
     </bean>
     <bean id="contextAware1" class="com.capgemini.springAssignment.Q10.ContextAwareExample">
-        <property name="place" value="Mumbai"/>
+        <property name="place" value="Banglore"/>
         <property name="demo" ref="Demo"/>
     </bean>
 
     <bean id="Demo" class="com.capgemini.springAssignment.Q10.Demo" scope="prototype">
-        <property name="x" value="10"/>
-        <property name="y" value="20"/>
+        <property name="x" value="15"/>
+        <property name="y" value="60"/>
     </bean>
 </beans>

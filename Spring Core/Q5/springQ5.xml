@@ -10,33 +10,33 @@
 
 
     <bean id="studentRequired" class="com.capgemini.springAssignment.Q5.Student">
-        <property name="name" value="Tony"/>
+        <property name="name" value="Vivek"/>
     </bean>
 
     <bean id="studentResource" class="com.capgemini.springAssignment.Q5.Student">
-        <property name="name" value="Tony"/>
-        <property name="age" value="15"/>
+        <property name="name" value="Vivek"/>
+        <property name="age" value="20"/>
     </bean>
     <bean id="school" class = "com.capgemini.springAssignment.Q5.School">
-        <property name="name" value="HIC"/>
-        <property name="TotalStudent" value="200"/>
+        <property name="name" value="Kumar"/>
+        <property name="TotalStudent" value="90"/>
 
     </bean>
 
     <bean id="school1" class = "com.capgemini.springAssignment.Q5.School">
-        <property name="name" value="HIC"/>
-        <property name="TotalStudent" value="200"/>
+        <property name="name" value="Vivek"/>
+        <property name="TotalStudent" value="300"/>
 
     </bean>
     <bean id="school2" class = "com.capgemini.springAssignment.Q5.School">
-        <property name="name" value="LNPS"/>
-        <property name="TotalStudent" value="500"/>
+        <property name="name" value="ASP"/>
+        <property name="TotalStudent" value="220"/>
 
     </bean>
 
     <bean id="school3" class = "com.capgemini.springAssignment.Q5.School">
-        <property name="name" value="SSBVM"/>
-        <property name="TotalStudent" value="250"/>
+        <property name="name" value="NARY"/>
+        <property name="TotalStudent" value="360"/>
 
     </bean>
 

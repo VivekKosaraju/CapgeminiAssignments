@@ -4,20 +4,20 @@
 
 <beans>
     <bean id="Question" class="com.capgemini.springAssignment.Q2.Question">
-        <property name="questionId"  value="111"/>
-        <property name="question" value="what is Spring?"/>
+        <property name="questionId"  value="555"/>
+        <property name="question" value="why?"/>
         <property name="answers">
             <list>
-                <value>Spring is a lightweight framework </value>
+                <value>It is a lightweight framework </value>
                 <value>he Spring framework comprises several modules such as IOC, AOP, DAO, Context, ORM, WEB MVC etc.</value>
-                <value>It was developed by Rod Johnson in 2003.</value>
+                <value>Spring Framework</value>
             </list>
         </property>
     </bean>
 
     <bean id="Question1" class="com.capgemini.springAssignment.Q2.Question">
-        <property name="questionId"  value="111"/>
-        <property name="question" value="what is Spring?"/>
+        <property name="questionId"  value="555"/>
+        <property name="question" value="How?"/>
         <property name="answersSet">
             <set>
                 <value>Spring is a lightweight framework </value>

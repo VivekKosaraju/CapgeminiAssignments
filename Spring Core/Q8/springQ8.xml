@@ -4,18 +4,18 @@
 
 <beans>
     <bean id="dog" class="com.capgemini.springAssignment.Q8.Dog" >
-        <property name="name" value="tommy"></property>
+        <property name="name" value="Vivek"></property>
     </bean>
 
     <!-- using init-method and destroy-method -->
     <bean id="dog1" class="com.capgemini.springAssignment.Q8.Dog" init-method="myInit" destroy-method="myDest">
-        <property name="name" value="Jack"/>
+        <property name="name" value="Kumar"/>
     </bean>
 
     <!-- Using postConstruct and preDestroy Annontations -->
 
     <bean id="dog2" class="com.capgemini.springAssignment.Q8.Dog">
-        <property name="name" value="Serro"/>
+        <property name="name" value="Hello"/>
     </bean>
 
     <!-- we have to add this class inorder to use annonatation for init and destroy method -->
