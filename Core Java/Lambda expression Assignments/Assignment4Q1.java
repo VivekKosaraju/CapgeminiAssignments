@@ -1,36 +1,37 @@
-import java.util.Scanner;
+package CapgeminiTraining.Java.Assignment4;
 
-@FunctionalInterface
-interface lambdaInterface{
-	double operation(int num1,int num2);
+/**
+ * Write an application to perform basic arithmetic operations like add, subtract, multiply & divide.
+ * You need to define a functional interface first.
+ */
+interface  Arithmetic{
+    public  double ArithmeticOperation (int num1,int num2);
+
 }
 
+
 public class Assignment4Q1 {
-	public double addition(int num1,int num2){
-		lambdaInterface add = (a,b) -> a+b;
-		return add.operation(num1,num2);
-	}
+    public double addition(int num1,int num2){
+        Arithmetic add = (int n1,int n2)->  n1+n2;
+        return add.ArithmeticOperation(num1,num2);
+    }
     public double subtraction(int num1,int num2){
-    	lambdaInterface sub = (a,b) -> a-b;
-		return sub.operation(num1,num2);
+        Arithmetic sub = (int n1,int n2)->  n1-n2;
+        return sub.ArithmeticOperation(num1,num2);
     }
     public double multiplication(int num1,int num2){
-    	lambdaInterface mul = (a,b) -> a*b;
-		return mul.operation(num1,num2);
+        Arithmetic mul = (int n1,int n2)->  n1*n2;
+        return mul.ArithmeticOperation(num1,num2);
     }
     public double division(int num1,int num2){
-    	lambdaInterface div = (a,b) -> ((a*0.1)/b)*10;
-		return div.operation(num1,num2);
+        Arithmetic div= (int n1,int n2)->  (double) n1/n2;
+        return div.ArithmeticOperation(num1,num2);
     }
     public static void main(String[] args) {
-    	Scanner sc = new Scanner(System.in);
-    	int num1 = sc.nextInt();
-    	int num2 = sc.nextInt();
-    	Assignment4Q1 obj = new Assignment4Q1();
-    	System.out.println(obj.addition(num1, num2));
-    	System.out.println(obj.subtraction(num1, num2));
-    	System.out.println(obj.multiplication(num1, num2));
-    	System.out.println(obj.division(num1, num2));
-    	sc.close();
+        Assignment4Q1 assignment4Q1 = new Assignment4Q1();
+        System.out.println(assignment4Q1.addition(10,20));
+        System.out.println(assignment4Q1.subtraction(20,10));
+        System.out.println(assignment4Q1.multiplication(10,20));
+        System.out.println(assignment4Q1.division(20,4));
     }
 }

@@ -1,117 +1,126 @@
+package CapgeminiTraining.Java.Assignment5;
+
 import java.util.*;
 import java.util.stream.Collectors;
+
+/**
+ * Display the following:
+ *
+ *         1. Display the fruit names of low calories fruits i.e. calories < 100 sorted in descending order of calories.
+ *
+ *         2. Display color wise list of fruit names.
+ *
+ *         3. Display only RED color fruits sorted as per their price in ascending order.
+ */
+
 class Fruit {
-    public String name;
+    private String name;
     private int calories;
     private int price;
     private String color;
+
     public Fruit(String name, int calories, int price, String color) {
-    	this.name = name;
-    	this.calories = calories;
-    	this.price = price;
-    	this.color = color;
+        this.name = name;
+        this.calories = calories;
+        this.price = price;
+        this.color = color;
     }
-    
+
     public String getName() {
-    	return name;
+        return name;
     }
-    
+
     public void setName(String name) {
-    	this.name = name;
+        this.name = name;
     }
-    
+
     public int getCalories() {
-    	return calories;
+        return calories;
     }
 
     public void setCalories(int calories) {
-    	this.calories = calories;
+        this.calories = calories;
     }
-    
+
     public int getPrice() {
-    	return price;
+        return price;
     }
-    
+
     public void setPrice(int price) {
-    	this.price = price;
+        this.price = price;
     }
-    
+
     public String getColor() {
-    	return color;
+        return color;
     }
-    
+
     public void setColor(String color) {
-    	this.color = color;
+        this.color = color;
     }
-    
-    public String toString(){ return "Fruit{name='"+this.name+"', "+"calories="+this.calories+", "+"price="+this.price+", "+"color='"+this.color+"'}";}
-   
+
+    @Override
+    public String toString() {
+        return "Fruit{" +
+                "name='" + name + '\'' +
+                ", calories=" + calories +
+                ", price=" + price +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }
 
 public class Assignment5Q1 {
 
-    public static List<String> reverseSort(ArrayList<Fruit> fruits)
-    {
-    	List<Fruit> Fruits=fruits.stream().filter(p->p.getCalories()<100).sorted(Comparator.comparing(Fruit::getCalories).reversed()).collect(Collectors.toList());
-    	List<String> Fruit =new ArrayList<String>(); 
-    	//System.out.println(Fruits.size());
-    	for(int i=0;i<Fruits.size();i++)
-    	{
-    		Fruit.add(Fruits.get(i).name);
-    	}
-    	//System.out.println(Fruit);
-    	return Fruit;
+    public static List<String> reverseSort(ArrayList<Fruit> fruits) {
+        //System.out.println(fruits);
+        ArrayList<Fruit> fruitName = fruits.stream()
+                .filter(p -> p.getCalories() < 100)
+                .sorted(Comparator.comparingInt(Fruit::getCalories).reversed())
+                .collect(Collectors.toCollection(ArrayList::new));
+
+       ArrayList<String> fruitName1 = new ArrayList<>();
+       for(Fruit fruit:fruitName){
+           fruitName1.add(fruit.getName());
+       }
+        System.out.println(fruitName1);
+        return fruitName1;
     }
-    
-    public static ArrayList<Fruit> sort(ArrayList<Fruit> fruits) 
-    {
-    	ArrayList<Fruit> Fruits=new ArrayList<Fruit>();
-    	fruits.stream().sorted(Comparator.comparing(Fruit::getColor)).forEach(fruit->Fruits.add(fruit));
-		return Fruits;
-	}
-    
-    public static ArrayList<Fruit> filterRedSortPrice(ArrayList<Fruit> fruits)
-    {
-    	ArrayList<Fruit> Fruits=new ArrayList<Fruit>(); 
-    	fruits.stream().filter(p->p.getColor()=="Red").sorted(Comparator.comparing(Fruit::getPrice)).forEach(fruit->Fruits.add(fruit));
-    	return Fruits;
+
+    public static ArrayList<Fruit> sort(ArrayList<Fruit> Fruits) {
+        Fruits=Fruits.stream()
+                .sorted(Comparator.comparing(Fruit::getColor))
+                .collect(Collectors.toCollection(ArrayList::new));
+        return Fruits;
     }
-    
-    public static void main(String[] args)
-    {
-        ArrayList<Fruit> Fruits=new ArrayList<Fruit>();
-        Scanner scan=new Scanner(System.in);
-        int number;
-        System.out.println("Enter number of fruits to be added: ");
-        number=scan.nextInt();
-        for(int i=0;i<number;i++)
-        {
-        	System.out.println("Enter name of fruit: ");
-            String name=scan.next();
-            System.out.println("Enter calories of fruit: ");
-            int calories=scan.nextInt();
-            System.out.println("Enter price of fruit: ");
-            int price=scan.nextInt();
-            System.out.println("Enter color of fruit: ");
-            String color=scan.next();
-            Fruits.add(new Fruit(name,calories,price,color));
-        }
-        
-        List<String> Fruit1=reverseSort(Fruits);
-        Fruit1.forEach((fruit)-> { System.out.println(fruit); });
-        
-        System.out.print("\n");
-        
-        ArrayList<Fruit> Fruit2=new ArrayList<Fruit>();
-        Fruit2=(ArrayList<Fruit>) sort(Fruits);
-        Fruit2.forEach((fruit)-> { System.out.println(fruit); });
-        
-        System.out.print("\n");
-        
-        ArrayList<Fruit> Fruit3=new ArrayList<Fruit>();
-        Fruit3=(ArrayList<Fruit>) filterRedSortPrice(Fruits);
-        Fruit3.forEach((fruit)-> { System.out.println(fruit); });
-   
-     }
+
+    public static ArrayList<Fruit> filterRedSortPrice(ArrayList<Fruit> fruits){
+        fruits=fruits.stream()
+                .filter(p->p.getColor().equals("Red"))
+                .sorted(Comparator.comparingInt(Fruit::getPrice))
+                .collect(Collectors.toCollection(ArrayList::new));
+        return fruits;
+    }
+
+    public static void main(String[] args) {
+        /*
+        List<Fruit> fruits = Arrays.asList(
+                new Fruit("mango",70,50,"Yellow"),
+                new Fruit("Apple",80,80,"Red"),
+                new Fruit("Banana",110,40,"Yellow"),
+                new Fruit("Pear",100,30,"Yellow"),
+                new Fruit("Grapes",60,50,"Green")
+        );
+        */
+        ArrayList<Fruit>fruits = new ArrayList<>();
+        fruits.add( new Fruit("mango",70,50,"Yellow"));
+        fruits.add(new Fruit("Apple",80,80,"Red"));
+        fruits.add(new Fruit("Banana",110,40,"Yellow"));
+        fruits.add( new Fruit("Pear",100,30,"Yellow"));
+        fruits.add(new Fruit("Grapes",60,50,"Green"));
+        reverseSort( fruits);
+        sort(fruits);
+        filterRedSortPrice(fruits);
+
+    }
 
 }

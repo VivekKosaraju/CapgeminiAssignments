@@ -1,0 +1,131 @@
+
+#body_style{
+	background-color: rgb(56, 61, 41) !important;;
+	color: white;
+	font-family: Comic Sans MS;
+}
+header{
+	background-color: 	rgb(26, 0, 0, 0.5);
+	color: white;
+}
+
+nav a:hover{
+	font-size: 30px;
+}
+
+
+
+.heading{
+	text-align: center;
+	color: orange;
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+.heading:hover{
+	text-decoration: underline;
+}
+
+#intro{
+
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./background3.jpg");
+	  
+
+	  /* Create the parallax scrolling effect */
+	  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.course{
+	text-align: center;
+	padding: 10% 0px;
+	background-color: rgb(26, 0, 0, 0.5);
+	margin: 10%;
+	border-radius: 20px;
+}
+.course:hover{
+	padding: 15% 0px;
+
+}
+
+.s-list li{
+	text-align: center;
+	display: inline-block;
+	background-color: rgb(26, 0, 0, 0.5);
+	padding: 20px 5%;
+	margin: 10px 3%; 
+	border-radius: 10px;
+}
+
+.s-list li:hover{
+	padding: 25px 5%;
+}
+
+
+
+.work{
+	text-align: center;
+	margin:10%;
+	padding: 10%;
+	background-color: rgb(26, 0, 0, 0.5);
+	border-radius: 20px;
+}
+
+.work:hover{
+	padding: 15%;
+}
+
+.b-list li{
+	background-color: rgb(26, 0, 0, 0.5);
+	padding: 1%;
+	margin: 1%; 
+}
+
+.b-list li:hover{
+	padding: 1.5%;
+}
+
+
+#contact{
+	text-align: center;
+}
+
+#contact p{
+	font-family: "Times New Roman", Times, serif;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 50px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover{
+	padding: 30px;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  border-radius: 10px;
+}
+
+ .fa-github {
+         color: black;
+         background: white;
+          border-radius: 10px;
+ }
+
+
+
+
+

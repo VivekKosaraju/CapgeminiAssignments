@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 1px;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3C1874;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #932432;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        .welcome {
+            background-image: url('https://source.unsplash.com/1600x900/?code,technology');
+            height: 50%;
+            color: aliceblue;
+            padding: 10px 25%;
+
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            background-color: #4CAF50;
+            margin: 2px -1px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            margin-top: 10%;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+
+        .main {
+            height: 30%;
+            background-color: #A3BCB6;
+           
+        }
+        .main h2{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: blueviolet;
+            padding-top: 80px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: DarkSalmon;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </header>
+    <div class="welcome">
+        <h1 style="padding: 80px;">Welcome To Project Managment</h1>
+
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="parallax.jpg" alt="Denim Jeans" style="width:100%">
+                <h1>Parallax</h1>
+                <p>In this I have created a demo page to demonstrate a parallax effect </p>
+                <p><button><a href="Q3.html">Visit Now</a></button></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="LandingPage.png" alt="Denim Jeans" style="width:100%">
+                <h1>Landing Page</h1>
+
+                <p>This is a web page for demonstration of landing page</p>
+                <p><button><a href="Q4.html">Visit Now</a></button></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x900/?code,technology" alt="Denim Jeans" style="width:100%">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem
+                    jeansum.</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x900/?code,technology" alt="Denim Jeans" style="width:100%">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem
+                    jeansum.</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <h2>We provide you the best content.</h2>>
+    </div>
+
+    <footer>
+        <p>Author: Hege Refsnes<br>
+            <a href="mailto:hege@example.com">hege@example.com</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

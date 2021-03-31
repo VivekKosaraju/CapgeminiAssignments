@@ -1,139 +1,117 @@
-import java.util.Arrays;
+package CapgeminiTraining.Java.Assignment3;
+
+import com.sun.org.apache.regexp.internal.RE;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+
+/**
+ * Write a program using Hashtable or HashMap where Date of birth is a key & Employee name as value.
+ * Design the class Date is such a way where the get method fails if two employees have same
+ * day & month of birth but birth year is different.
+ */
+
 
 class DateClass {
     private int date;
     private int month;
     private int year;
-    private String dob;
-    
-    public DateClass(int date, int month, int year)
-    {
-    	this.date=date;
-    	this.month=month;
-    	this.year=year;
+
+    public DateClass(int date, int month, int year) {
+        this.date = date;
+        this.month = month;
+        this.year = year;
     }
-    
-    public int getDate()
-    {
-    	return this.date;
+
+    public int getDate() {
+        return date;
     }
-    
-    public void setDate(int date)
-    {
-    	this.date=date;
+
+    public void setDate(int date) {
+        this.date = date;
     }
-    
-    public int getMonth()
-    {
-    	return this.month;
+
+    public int getMonth() {
+        return month;
     }
-    
-    public void setMonth(int month)
-    {
-    	this.month=month;
+
+    public void setMonth(int month) {
+        this.month = month;
     }
-    
-    public int getYear()
-    {
-    	return this.year;
+
+    public int getYear() {
+        return year;
     }
-    
-    public void setYear(int year)
-    {
-    	this.year=year;
+
+    public void setYear(int year) {
+        this.year = year;
     }
-    
-    public String getDOB()
-    {
-    	return this.date+"/"+this.month+"/"+this.year;
-    }
-    
-    public void setDOB(String dob)
-    {
-    	this.dob=dob;
-    }
-    
+
     @Override
-    public boolean equals(Object o) 
-    { 
-        if (this == o) { 
-            return true; 
-        } 
-        if (o == null) { 
-            return false; 
-        } 
-        if (this.getClass() != o.getClass()) { 
-            return false; 
-        } 
-        DateClass other = (DateClass)o; 
-        if (this.date == other.date && this.month==other.month) { 
-            return false; 
-        } 
-        return true; 
-    } 
+    public String toString() {
+        return "DateClass{" +
+                "date=" + date +
+                ", month=" + month +
+                ", year=" + year +
+                '}';
+    }
 }
 
 public class Assignment3Q4 {
 
-    public void getEmployee(HashMap<DateClass, String> dob,String employeeName)
-    {
-    	HashMap<String,String> Employees=new HashMap<>();
-    	String[] employeeNames=employeeName.split(",");
-    	String[] values=new String[employeeNames.length];
-    	String value="";
-    	Iterator trav=dob.entrySet().iterator();
-    	while(trav.hasNext())
-    	{
-    		Map.Entry record=(Map.Entry)trav.next();
-    		String name=(String) record.getValue();
-    		value+=name+" ";
-    	}
-    	
-    	values=value.split(" ");
-    	Arrays.sort(values);
-    	for(int i=0;i<4;i++)
-    	{
-    		Employees.put(values[i], employeeNames[i]);	
-    	}
-    	System.out.println(Employees);
-	}
-    public static void main(String[] args) 
-    {
-    	HashMap<DateClass, String> dob = new HashMap<>();
-    	DateClass one=new DateClass(28,2,1999);
-    	DateClass two=new DateClass(14,6,1989);
-    	DateClass three=new DateClass(28,2,1998);
-    	DateClass four=new DateClass(20,1,1999);
-    	
-    	dob.put(one, one.getDOB());
-    	dob.put(two,two.getDOB());
-    	dob.put(three, three.getDOB());
-    	dob.put(four, four.getDOB());
-    	
-    	String employeeName="Arun,Bharath,Chandra,Dinesh";
-    	Assignment3Q4 answer=new Assignment3Q4();
-    	
-    	for(Map.Entry<DateClass,String> entry: dob.entrySet())
-        {
-    		for(Map.Entry<DateClass, String> entry1: dob.entrySet())
-    		{
-    			if (!entry.getKey().equals(entry1.getKey())) 
-    	           {
-    	             if (!entry.getValue().equals(entry1.getValue())) {
-    	            	 answer.getEmployee(dob, employeeName);
-    	            	 break;
-    	             }
-    	             else
-    	             {
-    	            	 System.exit(0);
-    	             }
-    	             break;
-    	           }
-    			break;
-    		}
+    public String getEmployee(HashMap<DateClass, String> dob, String employeeName){
+        Set set = dob.entrySet();
+        Iterator itr = set.iterator();
+        Iterator itr2 = set.iterator();
+        int day=0;
+        int month=0;
+        int year=0;
+        while (itr.hasNext()){
+            Map.Entry m1 = (Map.Entry)itr.next();
+            DateClass dateClass = (DateClass)m1.getKey();
+            if(m1.getValue().equals(employeeName)){
+
+                day= dateClass.getDate();
+                month=dateClass.getMonth();
+                year = dateClass.getYear();
+            }
+
         }
+
+        while (itr2.hasNext()){
+            Map.Entry m1 = (Map.Entry)itr2.next();
+            DateClass dateClass = (DateClass)m1.getKey();
+            if( (day==dateClass.getDate() && month==dateClass.getMonth() && year!=dateClass.getYear()) && (!m1.getValue().equals(employeeName)) ){
+                return "get method fails";
+            }
+
+        }
+        return employeeName;
+    }
+
+    public static void main(String[] args) {
+        HashMap<DateClass,String> employee = new HashMap<>();
+
+        DateClass dateClass1 = new DateClass(04,07,1995);
+        DateClass dateClass2 = new DateClass(04,03,1997);
+        DateClass dateClass3 = new DateClass(04,07,1995);
+
+        DateClass dateClass4 = new DateClass(04,03,1995);
+
+        employee.put(dateClass1,"Ajay1");
+        employee.put(dateClass2,"Ajay2");
+        employee.put(dateClass3,"Ajay");
+        employee.put(dateClass4,"Ajay3");
+
+        Assignment3Q4 assignment3Q4 = new Assignment3Q4();
+        assignment3Q4.getEmployee(employee,"Ajay2");
+
+
+
     }
 }
+
