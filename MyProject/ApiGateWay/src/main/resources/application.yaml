@@ -1,0 +1,20 @@
+server:
+ port: 8100	
+zuul:
+ routes:
+  User:
+   url: http://localhost:8081
+  Flight:
+   url: http://localhost:8082
+  Booking:
+   url: http://localhost:8083
+  Discovery:
+   url: http://localhost:8761
+management:
+ endpoints:
+  web:
+   exposure:
+    include: '*'
+ endpoint:
+  health:
+   show-details: ALWAYS
